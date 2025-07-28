@@ -19,8 +19,10 @@ big_zombie = Enemy("Big zombie", 299, 2938)
 # print(ogre.walk_forward())
 # print(ogre.attack())
 
-big_zombie.health_points = 10
+# big_zombie.health_points = 10
+#
+# print(ogre.attack_damage)
+# print(big_zombie.attack_damage)
+# print(big_zombie.health_points)
 
-print(ogre.attack_damage)
-print(big_zombie.attack_damage)
-print(big_zombie.health_points)
+print(ogre.get_health_points()) #### encapsulation show making some instance variable more private

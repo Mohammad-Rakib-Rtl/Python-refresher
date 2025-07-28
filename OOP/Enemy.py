@@ -8,7 +8,7 @@ class Enemy:
         # pass
         # print("create new enemy")
         self.type_of_enemy = type_of_enemy ## we are setting each variable to args value
-        self.health_points = health_points
+        self.__health_points = health_points # making it private (encapsulation)
         self.attack_damage = attack_damage
 
 
@@ -19,12 +19,16 @@ class Enemy:
         # return f'I am a {self.type_of_enemy}. Be prepared to fight!'
 
     def walk_forward(self):
-        print(f'{self.type_of_enemy} moves closer to you.')
+        print(f'{self.type_of_enemy} moves closer to you with {self.__health_points} health points.')
         # return f'{self.type_of_enemy} moves closer to you.'
 
     def attack(self):
         # return f'{self.type_of_enemy} attacks for {self.attack_damage} damage.'
         print(f'{self.type_of_enemy} attacks for {self.attack_damage} damage.')
+
+    #getter method
+    def get_health_points(self):
+        return self.__health_points
 
 
 # ogre = Enemy()
