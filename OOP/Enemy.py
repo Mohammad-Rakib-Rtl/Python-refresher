@@ -7,28 +7,35 @@ class Enemy:
     def __init__(self, type_of_enemy, health_points, attack_damage):
         # pass
         # print("create new enemy")
-        self.type_of_enemy = type_of_enemy ## we are setting each variable to args value
-        self.__health_points = health_points # making it private (encapsulation)
+        self.__type_of_enemy = type_of_enemy ## we are setting each variable to args value
+        self.health_points = health_points # making it private (encapsulation)
         self.attack_damage = attack_damage
 
 
 
     ### example of abstraction (which hides the functionality like torch switch)
     def talk(self):
-        print(f'I am a {self.type_of_enemy}. Be prepared to fight!')
+        print(f'I am a {self.__type_of_enemy}. Be prepared to fight!')
         # return f'I am a {self.type_of_enemy}. Be prepared to fight!'
 
     def walk_forward(self):
-        print(f'{self.type_of_enemy} moves closer to you with {self.__health_points} health points.')
+        print(f'{self.__type_of_enemy} moves closer to you with {self.health_points} health points.')
         # return f'{self.type_of_enemy} moves closer to you.'
 
     def attack(self):
         # return f'{self.type_of_enemy} attacks for {self.attack_damage} damage.'
-        print(f'{self.type_of_enemy} attacks for {self.attack_damage} damage.')
+        print(f'{self.__type_of_enemy} attacks for {self.attack_damage} damage.')
+
+    def get_type_of_enemy(self):
+        return self.__type_of_enemy
+
 
     #getter method
-    def get_health_points(self):
-        return self.__health_points
+    def health_points(self):
+        return self.health_points
+
+    def special_attack(self):
+        print('Enemy has no special attack')
 
 
 # ogre = Enemy()
