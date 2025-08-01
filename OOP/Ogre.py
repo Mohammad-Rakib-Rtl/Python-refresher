@@ -18,4 +18,4 @@ class Ogre(Enemy):
         did_special_attack_work = random.random() < 0.20
         if did_special_attack_work:
             self.attack_damage += 4
-            print('Ogre attack has increased by 4!')
+            print('Ogre gets angry and increases attack by 4!')
